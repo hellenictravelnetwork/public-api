@@ -352,7 +352,7 @@ A transaction object with the new data
 
 - **Example Request:**
 ``` 
-    DELETE /public-api/v1/transactions/123
+    DELETE /public-api/v1/transactions/123/cancel
 ```
 - **Response:**
 A transaction object with the new data (status changed to cancel and the total price equal to the cancellation policy equivalent)
