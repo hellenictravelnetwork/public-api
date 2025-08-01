@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "a1081689-c95a-479d-8956-8cbde660aa0b",
+		"name": "HTN Public Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28927006"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "Always Required ",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "en for english | es for spanish | pt for portuguese",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/public-api/v1/products/packages?page_size=20",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"public-api",
+								"v1",
+								"products",
+								"packages"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "20",
+									"description": "Required"
+								},
+								{
+									"key": "date",
+									"value": "2025-10-14",
+									"description": "Filter packages by date of arrival",
+									"disabled": true
+								},
+								{
+									"key": "min_days",
+									"value": "3",
+									"description": "Filter packages  by min days * require max days",
+									"disabled": true
+								},
+								{
+									"key": "max_days",
+									"value": "10",
+									"description": "Filter packages by max days * require min days",
+									"disabled": true
+								},
+								{
+									"key": "detailed",
+									"value": "true",
+									"description": "false:package basic information\ntrue: All package data",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "Always Required ",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "en for english | es for spanish | pt for portuguese",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/public-api/v1/products/packages/:package_id",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"public-api",
+								"v1",
+								"products",
+								"packages",
+								":package_id"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-10-06",
+									"description": "If the request includes a date parameter, the API returns the package categories and their prices as of that date; otherwise, it returns the full package data.",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "package_id",
+									"value": "",
+									"description": "Package id "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Get Transactions",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/public-api/v1/transactions",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"public-api",
+								"v1",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "20",
+									"description": "Default 20 max 100",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Select page",
+									"disabled": true
+								},
+								{
+									"key": "sub_client_locator",
+									"value": "",
+									"description": "Filter by your parent company locator",
+									"disabled": true
+								},
+								{
+									"key": "client_locator",
+									"value": "",
+									"description": "Filter by your company locator",
+									"disabled": true
+								},
+								{
+									"key": "action_user_id",
+									"value": null,
+									"description": "Filter by users created the transactions",
+									"disabled": true
+								},
+								{
+									"key": "date_arrives",
+									"value": null,
+									"description": "Filter by arrival date",
+									"disabled": true
+								},
+								{
+									"key": "created_at",
+									"value": null,
+									"description": "Filter from newest to latest",
+									"disabled": true
+								},
+								{
+									"key": "transaction_status_id",
+									"value": null,
+									"description": "Find transactions by their status (check docs for status ids)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "en for english | es for spanish | pt for portuguese",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/public-api/v1/transactions/:transaction_id",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"public-api",
+								"v1",
+								"transactions",
+								":transaction_id"
+							],
+							"variable": [
+								{
+									"key": "transaction_id",
+									"value": "",
+									"description": "Required"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Transaction",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date_arrives\": \"2025-03-20\",\r\n    \"product_id\": \"2-697-1704444179\",\r\n    \"category_id\": 54,\r\n    \"category_price_id\": 2002,\r\n    \"rooms\": [\r\n        {\r\n            \"room_type_id\": 1,\r\n            \"room_customers\": [\r\n                {\r\n                    \"age\": \"55\",\r\n                    \"first_name\": \"John\",\r\n                    \"gender_id\": 1,\r\n                    \"last_name\": \"Doe\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/public-api/v1/transactions/create",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"public-api",
+								"v1",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/public-api/v1/transactions/:transaction_id/cancel",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public-api",
+								"v1",
+								"transactions",
+								":transaction_id",
+								"cancel"
+							],
+							"variable": [
+								{
+									"key": "transaction_id",
+									"value": "",
+									"description": "Required"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{api_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_token",
+			"value": "Enter your api token",
+			"type": "string"
+		},
+		{
+			"key": "api_url",
+			"value": "https://develop.helleictravel.net/",
+			"type": "string"
+		}
+	]
+}
