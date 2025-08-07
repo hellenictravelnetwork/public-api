@@ -443,7 +443,7 @@
 		},
 		{
 			"key": "api_url",
-			"value": "https://develop.helleictravel.net/",
+			"value": "https://develop.hellenictravel.network",
 			"type": "string"
 		}
 	]

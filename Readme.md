@@ -2,7 +2,7 @@
 This documentation covers the API endpoints for retrieving product and basic transaction interaction. The API utilizes Sanctum for authentication, requiring a valid API token for access.
 ### Base URLs
 **Production**: api.hellenictravel.net<br>
-**Sandbox**: develop.hellenictravel.net
+**Sandbox**: develop.hellenictravel.network
 ### Authentication
 All endpoints under the `/public-api/v1` prefix require authentication via Laravel Sanctum. Include a valid API token in the `Authorization` header as a Bearer token.
 In order to obtain an API token, you need to have gone through the process of applying to become a partner, get accepted and then contact our team to get your corresponding API token for both Production and Sandbox.
