@@ -101,7 +101,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{api_key}}",
+									"value": "{{api_token}}",
 									"type": "string"
 								}
 							]
@@ -144,7 +144,7 @@
 							"variable": [
 								{
 									"key": "package_id",
-									"value": "",
+									"value": "2-455-1704280435",
 									"description": "Package id "
 								}
 							]
